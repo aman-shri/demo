@@ -3,7 +3,7 @@ import java.io.*;
 import java.lang.*;
 
 
-public class temp {
+public class CHECHOC {
 
     public static void main(String[] args) throws Exception {
         FastReader fs = new FastReader();
@@ -11,11 +11,21 @@ public class temp {
         PrintWriter out = new PrintWriter(System.out);
         int test = fs.nextInt();
         while (test-- != 0) {
-            
+            int n = fs.nextInt(), m = fs.nextInt(), x =fs.nextInt(), y = fs.nextInt();
+            long ans = 0;
+            if(y>=2*x) {
+            	ans = n*m*x;
+            }
+            else if(y<2*x) {
+            	if(n*m%2==0)
+            		ans = ((n*m)/2) *y;
+            	else
+            		ans = (long)Math.ceil((m*n))*x;
+            }
+            out.println(ans);
         }
         out.close();
     }
-    
     
     
     static void sort(int[] a) {
